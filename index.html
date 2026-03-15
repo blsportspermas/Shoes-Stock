@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://docs.google.com/spreadsheets/d/e/2PACX-1vTHvF02XnDXMvH-sh32vd7c0MjrUJLBxu_rzdj7ckdoOEQerxEoWTriOCqSzFagvxEseBDVNC1ueFJs/pubhtml">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精選數據展示</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; background: #f0f2f5; }
+
+        /* 外層相框：控制最後呈現給使用者看的大小 */
+        .window-frame {
+            width: 350px;         /* 手機寬度建議 350px 左右 */
+            height: 500px;        /* 想要呈現的高度 */
+            overflow: hidden;    /* 關鍵！隱藏框框外的內容 */
+            border: 5px solid #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* 內層 iframe：要把這張紙「位移」到對的位置 */
+        .window-frame iframe {
+            position: absolute;
+            
+            /* --- 調整區開始 --- */
+            top: -80px;          /* 向上推，隱藏 Google Sheets 的標題和工具列 */
+            left: -5px;          /* 向左推，隱藏左側列號或多餘空白 */
+            width: 600px;        /* 寬度要設比外框大，避免內容擠壓 */
+            height: 1200px;      /* 高度也要設夠大 */
+            /* --- 調整區結束 --- */
+
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <script type="text/javascript">
-        // 第二重保險：JavaScript 跳轉
-        window.location.replace("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHvF02XnDXMvH-sh32vd7c0MjrUJLBxu_rzdj7ckdoOEQerxEoWTriOCqSzFagvxEseBDVNC1ueFJs/pubhtml");
-    </script>
-    
-    <p>Redirecting to the page, please wait...</p>
-    <p>If you are not automatically redirected, please click  <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHvF02XnDXMvH-sh32vd7c0MjrUJLBxu_rzdj7ckdoOEQerxEoWTriOCqSzFagvxEseBDVNC1ueFJs/pubhtml">here</a>to enter manually.</p>
+
+    <div class="window-frame">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTHvF02XnDXMvH-sh32vd7c0MjrUJLBxu_rzdj7ckdoOEQerxEoWTriOCqSzFagvxEseBDVNC1ueFJs/pubhtml?widget=false&headers=false"></iframe>
+    </div>
+
 </body>
 </html>
